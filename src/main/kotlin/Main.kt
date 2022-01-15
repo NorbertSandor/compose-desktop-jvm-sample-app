@@ -10,6 +10,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import com.example.domain.Street
+import arrow.optics.dsl.*
+import com.example.domain.*
+import arrow.optics.Optional
 
 @Composable
 @Preview
@@ -26,6 +30,10 @@ fun App() {
 }
 
 fun main() = application {
+    val john = Employee("John Doe", Company("Kategory", Address("Functional city", Street(42, "lambda street"))))
+    val optional: Optional<Employee, String> = Employee.company.address.street.name
+    optional.modify(john, String::toUpperCase)
+
     Window(onCloseRequest = ::exitApplication) {
         App()
     }
