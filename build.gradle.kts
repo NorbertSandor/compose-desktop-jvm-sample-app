@@ -19,10 +19,11 @@ allprojects {
 dependencies {
     implementation(compose.desktop.currentOs)
 
-    implementation(platform("io.arrow-kt:arrow-stack:1.0.2-alpha.28"))
+    val arrowVersion = "1.0.2-alpha.43"
+    implementation(platform("io.arrow-kt:arrow-stack:$arrowVersion"))
     implementation("io.arrow-kt:arrow-core")
     implementation("io.arrow-kt:arrow-optics")
-    ksp("io.arrow-kt:arrow-optics-ksp-plugin:1.0.2-alpha.28") // 1.0.1 is not available on mavenCentral()
+    ksp("io.arrow-kt:arrow-optics-ksp-plugin:$arrowVersion")
 }
 
 tasks.withType<KotlinCompile> {
