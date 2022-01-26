@@ -41,8 +41,7 @@ fun App() {
 //                )
 
                 // Arrow way
-                val optional: Optional<Employee, Int> = Employee.company.address.street.number
-                john = optional.modify(john) { it + 1 }
+                john = Employee.company.address.street.number.modify(john) { it + 1 }
             }) {
                 Text("Increment street number")
             }

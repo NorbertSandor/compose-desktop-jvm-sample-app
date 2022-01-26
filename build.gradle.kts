@@ -19,7 +19,7 @@ allprojects {
 dependencies {
     implementation(compose.desktop.currentOs)
 
-    val arrowVersion = "1.0.2-alpha.43"
+    val arrowVersion = "1.0.3-alpha.1"
     implementation(platform("io.arrow-kt:arrow-stack:$arrowVersion"))
     implementation("io.arrow-kt:arrow-core")
     implementation("io.arrow-kt:arrow-optics")
